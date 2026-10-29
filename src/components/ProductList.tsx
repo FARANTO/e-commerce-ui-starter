@@ -1,80 +1,139 @@
 import { ProductsType } from "@/types";
 import Categories from "./Categories";
 import ProductCard from "./ProductCard";
+import Link from "next/link";
+import Filter from "./Filter";
 
-//TEMPORARY
-const products:ProductsType = [
+// TEMPORARY
+const products: ProductsType = [
   {
-    "id": 1,
-    "name": "Adidas CoreFit T-Shirt",
-    "shortDescription": "Comfortable Adidas T-shirt for everyday wear.",
-    "description": "A stylish and comfortable Adidas CoreFit T-Shirt made from soft, breathable fabric. Perfect for workouts, casual outings, and everyday use.",
-    "price": 39.9,
-    "sizes": ["s", "m", "l", "xl", "xxl"],
-    "colors": ["gray", "purple", "green"],
-    "images": {
-      "gray": "/products/1g.png",
-      "purple": "/products/1p.png",
-      "green": "/products/1gr.png"
-    }
+    id: 1,
+    name: "Adidas CoreFit T-Shirt",
+    shortDescription:
+      "Lorem ipsum dolor sit amet consect adipisicing elit lorem ipsum dolor sit.",
+    description:
+      "Lorem ipsum dolor sit amet consect adipisicing elit lorem ipsum dolor sit. Lorem ipsum dolor sit amet consect adipisicing elit lorem ipsum dolor sit. Lorem ipsum dolor sit amet consect adipisicing elit lorem ipsum dolor sit.",
+    price: 39.9,
+    sizes: ["s", "m", "l", "xl", "xxl"],
+    colors: ["gray", "purple", "green"],
+    images: {
+      gray: "/products/1g.png",
+      purple: "/products/1p.png",
+      green: "/products/1gr.png",
+    },
   },
   {
-    "id": 2,
-    "name": "Nike AirMax Sneakers",
-    "shortDescription": "Lightweight sneakers with excellent cushioning.",
-    "description": "Nike AirMax Sneakers combine modern style with superior comfort. Featuring a cushioned sole and breathable upper, these sneakers are ideal for walking, running, and everyday activities.",
-    "price": 89.99,
-    "sizes": ["39", "40", "41", "42", "43", "44"],
-    "colors": ["black", "white", "blue"],
-    "images": {
-      "black": "/products/2b.png",
-      "white": "/products/2w.png",
-      "blue": "/products/2bl.png"
-    }
+    id: 2,
+    name: "Puma Ultra Warm Zip",
+    shortDescription:
+      "Lorem ipsum dolor sit amet consect adipisicing elit lorem ipsum dolor sit.",
+    description:
+      "Lorem ipsum dolor sit amet consect adipisicing elit lorem ipsum dolor sit. Lorem ipsum dolor sit amet consect adipisicing elit lorem ipsum dolor sit. Lorem ipsum dolor sit amet consect adipisicing elit lorem ipsum dolor sit.",
+    price: 59.9,
+    sizes: ["s", "m", "l", "xl"],
+    colors: ["gray", "green"],
+    images: { gray: "/products/2g.png", green: "/products/2gr.png" },
   },
   {
-    "id": 3,
-    "name": "Puma Essentials Hoodie",
-    "shortDescription": "A cozy hoodie with a modern, relaxed fit.",
-    "description": "The Puma Essentials Hoodie is designed for comfort and versatility. Made with soft fabric, an adjustable hood, and a convenient front pocket, it is perfect for cool weather, travel, and casual styling.",
-    "price": 59.5,
-    "sizes": ["s", "m", "l", "xl", "xxl"],
-    "colors": ["black", "gray", "red"],
-    "images": {
-      "black": "/products/3b.png",
-      "gray": "/products/3g.png",
-      "red": "/products/3r.png"
-    }
+    id: 3,
+    name: "Nike Air Essentials Pullover",
+    shortDescription:
+      "Lorem ipsum dolor sit amet consect adipisicing elit lorem ipsum dolor sit.",
+    description:
+      "Lorem ipsum dolor sit amet consect adipisicing elit lorem ipsum dolor sit. Lorem ipsum dolor sit amet consect adipisicing elit lorem ipsum dolor sit. Lorem ipsum dolor sit amet consect adipisicing elit lorem ipsum dolor sit.",
+    price: 69.9,
+    sizes: ["s", "m", "l"],
+    colors: ["green", "blue", "black"],
+    images: {
+      green: "/products/3gr.png",
+      blue: "/products/3b.png",
+      black: "/products/3bl.png",
+    },
   },
   {
-    "id": 4,
-    "name": "Levi's Classic Denim Jeans",
-    "shortDescription": "Classic denim jeans for timeless everyday style.",
-    "description": "Levi's Classic Denim Jeans offer a versatile design with durable denim fabric and a comfortable fit. Easy to pair with T-shirts, shirts, and sneakers for casual or smart-casual outfits.",
-    "price": 74.99,
-    "sizes": ["28", "30", "32", "34", "36"],
-    "colors": ["blue", "black", "lightblue"],
-    "images": {
-      "blue": "/products/4bl.png",
-      "black": "/products/4b.png",
-      "lightblue": "/products/4lb.png"
-    }
-  }
-]
+    id: 4,
+    name: "Nike Dri Flex T-Shirt",
+    shortDescription:
+      "Lorem ipsum dolor sit amet consect adipisicing elit lorem ipsum dolor sit.",
+    description:
+      "Lorem ipsum dolor sit amet consect adipisicing elit lorem ipsum dolor sit. Lorem ipsum dolor sit amet consect adipisicing elit lorem ipsum dolor sit. Lorem ipsum dolor sit amet consect adipisicing elit lorem ipsum dolor sit.",
+    price: 29.9,
+    sizes: ["s", "m", "l"],
+    colors: ["white", "pink"],
+    images: { white: "/products/4w.png", pink: "/products/4p.png" },
+  },
+  {
+    id: 5,
+    name: "Under Armour StormFleece",
+    shortDescription:
+      "Lorem ipsum dolor sit amet consect adipisicing elit lorem ipsum dolor sit.",
+    description:
+      "Lorem ipsum dolor sit amet consect adipisicing elit lorem ipsum dolor sit. Lorem ipsum dolor sit amet consect adipisicing elit lorem ipsum dolor sit. Lorem ipsum dolor sit amet consect adipisicing elit lorem ipsum dolor sit.",
+    price: 49.9,
+    sizes: ["s", "m", "l"],
+    colors: ["red", "orange", "black"],
+    images: {
+      red: "/products/5r.png",
+      orange: "/products/5o.png",
+      black: "/products/5bl.png",
+    },
+  },
+  {
+    id: 6,
+    name: "Nike Air Max 270",
+    shortDescription:
+      "Lorem ipsum dolor sit amet consect adipisicing elit lorem ipsum dolor sit.",
+    description:
+      "Lorem ipsum dolor sit amet consect adipisicing elit lorem ipsum dolor sit. Lorem ipsum dolor sit amet consect adipisicing elit lorem ipsum dolor sit. Lorem ipsum dolor sit amet consect adipisicing elit lorem ipsum dolor sit.",
+    price: 59.9,
+    sizes: ["40", "42", "43", "44"],
+    colors: ["gray", "white"],
+    images: { gray: "/products/6g.png", white: "/products/6w.png" },
+  },
+  {
+    id: 7,
+    name: "Nike Ultraboost Pulse ",
+    shortDescription:
+      "Lorem ipsum dolor sit amet consect adipisicing elit lorem ipsum dolor sit.",
+    description:
+      "Lorem ipsum dolor sit amet consect adipisicing elit lorem ipsum dolor sit. Lorem ipsum dolor sit amet consect adipisicing elit lorem ipsum dolor sit. Lorem ipsum dolor sit amet consect adipisicing elit lorem ipsum dolor sit.",
+    price: 69.9,
+    sizes: ["40", "42", "43"],
+    colors: ["gray", "pink"],
+    images: { gray: "/products/7g.png", pink: "/products/7p.png" },
+  },
+  {
+    id: 8,
+    name: "Levi’s Classic Denim",
+    shortDescription:
+      "Lorem ipsum dolor sit amet consect adipisicing elit lorem ipsum dolor sit.",
+    description:
+      "Lorem ipsum dolor sit amet consect adipisicing elit lorem ipsum dolor sit. Lorem ipsum dolor sit amet consect adipisicing elit lorem ipsum dolor sit. Lorem ipsum dolor sit amet consect adipisicing elit lorem ipsum dolor sit.",
+    price: 59.9,
+    sizes: ["s", "m", "l"],
+    colors: ["blue", "green"],
+    images: { blue: "/products/8b.png", green: "/products/8gr.png" },
+  },
+];
 
-
-const ProductList = () => {
-    return (
-    <div className="w-full ">
+const ProductList = ({ category,params }: { category: string, params:"homepage" | "products" }) => {
+  return (
+    <div className="w-full">
       <Categories />
-
-       <div className="grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-3 2xl:grid-cols-4 gap-12">
+      {params === "products" && <Filter/>}
+      <div className="grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-3 2xl:grid-cols-4 gap-12">
         {products.map((product) => (
           <ProductCard key={product.id} product={product} />
         ))}
       </div>
-       </div>
-    );
+      <Link
+        href={category ? `/products/?category=${category}` : "/products"}
+        className="flex justify-end mt-4 underline text-sm text-gray-500"
+      >
+        View all products
+      </Link>
+    </div>
+  );
 };
 
 export default ProductList;
